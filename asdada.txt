@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="bday.css" rel="stylesheet"> 
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="card-container">
+        <div class="card" id="frontCard">
+            <img src="https://source.unsplash.com/featured/?love,flowers" alt="Birthday Celebration" class="card-img">
+            <span class="heart-animation">❤️</span>
+            <div class="card-body">
+                <h5 class="card-title">🎂 Happy Birthday, Mahal! 💖</h5>
+                <p class="card-text" id="animatedText"></p>
+                <a href="#" class="btn">Let’s Celebrate 🎉</a>
+            </div>
+        </div>
+        <div class="card" id="backCard">
+            <div class="card-body">
+                <h5 class="card-title">Surprise! 🎊</h5>
+                <p class="card-text">Hi mahal! 💖 <br> happy happy birthdayyyy sobrang mahal na mahal kita hindi ko alam mga sasabihin ko pero gusto na kita makitaaa waaa, sobrang namimimiss kita palagi sorry baby kung hindi ako makakapunta ngayong birthday mo ha? alam ko na sobrang importante sayo yung araw nato peroo sorry mahal, pero hayaan mo! babawi ako sayo mahall promise, magkikita na talaga tayo next time sobrang mahal na mahal kita! sobra sobra gusto na kita ma hug, gusto ko na mag kwento sayo, gusto ko na gawin lahat ng masasayang bagay kasama kaa, sorry ha HAHAHA kung magiging cringe ako ngayon, pag bigyan mo na ako kasi birthday mo naman baby e, sa lahat ng nagawa ko mahal, sobrang sorry lahat ng mga yon ibabawi ko yon lahat sayo. i promise! lahat gagawin ko para mapasaya ka ng todo, mamahalin kita ng sobra sobra sobra, kagaya ng pagmamahal mo sakin, syempre mas higit pa, di naman ako papatalo e HAHAHA, waaa 9:21 pm na ngayon ng tues wala pa q ligo HAHAHAHAHHA, inaayos ko pa kasi yung codeee wag kana magalit sakin, wala na ako masabi huhu, ang cringe ko na talaga waaa sooo ayonn babyyy, wait mo lang ako ha? magkikita na tayoo malapit na, hindi ko na kailangan sabihin sayo na ingatan mo yang sarili mo kasi alam mo naman na oki?????? para sakin mahal, so ayun happy birthday mahal! HAPPY 18TH BIRTHDAY MAHAL, deserve mo lahat ng magagandang bagay sa mundo, ibibigay ko sayo lahat mahal, happy 18th birthday my futuree, i love you so much!!</p>
+                <a href="#" class="btn">Thank You! 🌹</a>
+            </div>
+        </div>
+    </div>
+    <div class="music-player">
+        <div class="album-cover">
+            <img src="images/babyyy.jfif" alt="Album Cover">
+        </div>
+        <div class="player-controls">
+            <div class="track-info">
+                <span class="track-title">Can't Help Falling in Love</span>
+                <span class="track-artist">Haley Reinhart</span>
+            </div>
+            <audio id="audio" autoplay loop>
+                <source src="music/haley-reinhart-can-t-help-falling-in-love-official-audio-128-ytshorts.savetube.me.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="progress-container">
+                <span class="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span class="duration">3:31</span>
+            </div>
+            <div class="controls">
+                <button onclick="document.getElementById('audio').pause()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path fill="white" d="M4.5 8l6-4v8l-6-4zM8.5 8l6-4v8l-6-4z" />
+                    </svg>
+                </button>
+                <button onclick="document.getElementById('audio').play()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path fill="white" d="M4.018 14L14.41 8 4.018 2z" />
+                    </svg>
+                </button>
+                <button onclick="document.getElementById('audio').pause()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path fill="white" d="M11.5 8l-6-4v8l6-4zM7.5 8l-6-4v8l6-4z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <script>
+        const audio = document.getElementById('audio');
+        const playBtn = document.querySelector('.play-btn');
+        const currentTimeLabel = document.querySelector('.current-time');
+        const durationLabel = document.querySelector('.duration');
+        const progressBar = document.querySelector('.progress');
+        const progressContainer = document.querySelector('.progress-bar');
+    
+        // Update duration label
+        audio.onloadedmetadata = function() {
+            const duration = Math.floor(audio.duration);
+            const minutes = Math.floor(duration / 60);
+            const seconds = duration % 60;
+            durationLabel.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        };
+    
+        // Play/Pause functionality
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playBtn.textContent = '❚❚'; // Change to pause icon
+            } else {
+                audio.pause();
+                playBtn.textContent = '▶️'; // Change to play icon
+            }
+        });
+    
+        // Update progress bar and current time
+        audio.addEventListener('timeupdate', () => {
+            const currentTime = Math.floor(audio.currentTime);
+            currentTimeLabel.textContent = `${Math.floor(currentTime / 60)}:${(currentTime % 60 < 10 ? '0' : '') + (currentTime % 60)}`;
+            const progressPercent = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+        });
+    
+        // Jump to clicked progress
+        progressContainer.addEventListener('click', (event) => {
+            const progressBarWidth = progressContainer.clientWidth;
+            const clickPosition = event.offsetX;
+            const newTime = (clickPosition / progressBarWidth) * audio.duration;
+            audio.currentTime = newTime;
+        });
+    </script>
+    
+    
+    <script src="bday.js"></script>
+</body>
+</html>

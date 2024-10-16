@@ -1,0 +1,119 @@
+/* Fullscreen loading screen */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white ;/* Soft pink background */
+    font-family: 'Arial', sans-serif;
+    00%;
+    display: flex;
+  }
+      
+  .loader-wrapper {
+    text-align: center;
+    width
+  }
+  
+  /* Progress bar container */
+  .progress-bar-container {
+
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 400px;
+    height: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  /* Progress bar animation */
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #ff66b2;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Message styling */
+  .message h2, .message p {
+    transition: opacity 0.5s ease;
+    color: rgb(240, 88, 159);
+  }
+  
+  /* Fade animation */
+ .fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.heart2hart{
+    position: absolute; /* Take the image out of the normal flow */
+    margin-bottom: 600px;
+    left: 10%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image properly */
+    width: 80px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */;
+    transform: rotate(-45deg); /* Rotates the image by 45 degrees */
+}
+
+.heart3hart{
+    position: absolute; /* Take the image out of the normal flow */
+    margin-top: 400px;
+    right: 70%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image properly */
+    width: 50px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */;
+}
+
+.heart4hart{
+    position: absolute; /* Take the image out of the normal flow */
+    margin-top: 400px;
+    left: 70%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image properly */
+    width: 200px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */;
+}
+
+.heart5hart{
+    position: absolute; /* Take the image out of the normal flow */
+    margin-bottom: 400px;
+    left: 70%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image properly */
+    width: 200px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */;
+}
+
+@media (max-width: 767.98px){
+    
+    .progress-bar-container {
+
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 200px;
+    height: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+    .message h2{
+        font-size: 1rem;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+}

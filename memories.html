@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Long Distance Love</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa);
+            color: #333;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background: url('https://via.placeholder.com/800x200') no-repeat center center/cover;
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            animation: slideDown 1s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 2.5em;
+            color: #4a90e2;
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        li {
+            margin: 15px 0;
+            font-size: 1.3em;
+            transition: transform 0.3s;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        li:hover {
+            transform: scale(1.03);
+            background-color: #e6f7ff;
+            border-left: 5px solid #4a90e2;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1.1em;
+        }
+
+        .button:hover {
+            background-color: #357ab8;
+            transform: translateY(-2px);
+        }
+
+        .message-input {
+            margin: 20px 0;
+            padding: 15px;
+            width: 80%;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .message-input:focus {
+            border-color: #357ab8;
+            outline: none;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+            animation: fadeInGallery 1s ease-in;
+        }
+
+        @keyframes fadeInGallery {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .gallery-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 1em;
+            color: #777;
+            border-top: 1px solid #ddd;
+            background-color: #f9f9f9;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.8em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            .message-input {
+                width: 90%;
+            }
+
+            .gallery-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Long Distance Love</h1>
+        <p>A bond that transcends miles.</p>
+    </header>
+    <div class="container">
+        <h2>What Makes Us Special</h2>
+        <p>Our love is defined by:</p>
+        <ul>
+            <li>❤️ Endless conversations that last for hours</li>
+            <li>✈️ Planning our next visit and making memories</li>
+            <li>🎉 Celebrating each other's milestones from afar</li>
+            <li>💌 Sending surprises and love letters</li>
+            <li>🌌 Stargazing and imagining we're under the same sky</li>
+        </ul>
+        <p>Though we may be apart, our love grows stronger every day.</p>
+        
+        <h2>Send a Message</h2>
+        <input type="text" class="message-input" id="userMessage" placeholder="Type your message here..." />
+        <button class="button" onclick="sendMessage()">Send Message</button>
+
+        <h2>Future Photos Gallery</h2>
+        <div class="image-gallery" id="gallery">
+            <!-- Images will be added here -->
+        </div>
+
+        <a href="#" class="button" onclick="showAlert()">Send a Virtual Hug!</a>
+    </div>
+    <footer>
+        &copy; 2024 Our Love Story
+    </footer>
+
+    <script>
+        // Function to send a message
+        function sendMessage() {
+            const message = document.getElementById('userMessage').value;
+            if (message) {
+                alert(`Message Sent: "${message}"`);
+                document.getElementById('userMessage').value = ''; // Clear the input
+            } else {
+                alert("Please enter a message before sending!");
+            }
+        }
+
+        // Function to show a virtual hug alert
+        function showAlert() {
+            alert("🤗 Sending you a big virtual hug! I love you!");
+        }
+
+        // Function to add images to the gallery
+        function addToGallery(src) {
+            const gallery = document.getElementById('gallery');
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'A beautiful memory';
+            img.className = 'gallery-image';
+            img.onclick = () => {
+                alert("You've clicked on an image!");
+            };
+            gallery.appendChild(img);
+        }
+
+        // Add images to the gallery
+        const imageUrls = [
+            'images/babyyy.jfif',
+            'images/babyyy.jfif',
+            'images/babyyy.jfif',
+            'images/babyyy.jfif',
+            'images/babyyy.jfif',
+        ];
+
+        imageUrls.forEach(src => addToGallery(src));
+
+        // Adding animations to images after load
+        window.onload = () => {
+            const images = document.querySelectorAll('.gallery-image');
+            images.forEach((img, index) => {
+                img.style.opacity = 0;
+                setTimeout(() => {
+                    img.style.transition = "opacity 0.5s";
+                    img.style.opacity = 1;
+                }, index * 200);
+            });
+        };
+
+        // Function to add a random image to the gallery from an array
+        function addRandomImage() {
+            const randomImages = [
+                'images/ganda.gif',
+                'https://via.placeholder.com/150/C70039',
+'https://via.placeholder.com/150/900C3F',
+                'https://via.placeholder.com/150/581845',
+                'https://via.placeholder.com/150/FFC300',
+                'https://via.placeholder.com/150/DAF7A6',
+                'https://via.placeholder.com/150/FFC0CB',
+            ];
+            const randomIndex = Math.floor(Math.random() * randomImages.length);
+            addToGallery(randomImages[randomIndex]);
+        }
+
+        // Adding a button to add random images
+        const addRandomButton = document.createElement('button');
+        addRandomButton.innerText = 'Add Random Image';
+        addRandomButton.className = 'button';
+        addRandomButton.style.marginTop = '20px';
+        addRandomButton.onclick = addRandomImage;
+
+        // Append the button to the container
+        document.querySelector('.container').appendChild(addRandomButton);
+        
+        // Change background color of the page every 10 seconds
+        setInterval(() => {
+            const colors = ['#f0f8ff', '#e6e6fa', '#f7f7f7', '#f0e68c', '#ffcccb'];
+            document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+        }, 10000);
+    </script>
+</body>
+</html>
